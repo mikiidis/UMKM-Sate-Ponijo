@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sate Ponijo</title>
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+
+  <body onload="startTime()">
+    <!--Navbar-->
+    <header id="header-sticky">
+      <div id="logo">
+        <p id="header-logo"><a href="">Sate Ponijo</a></p>
+      </div>
+      <nav id="navbar">
+        <ul class="nav-list">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Location</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--Welcome Section-->
+    <main>
+      <div id="welcome-section">
+        <h1 id="welcome-title">Selamat Datang</h1>
+        <div id="welcome-bottom">
+          <div id="welcome-open">
+            <p class="open-dot open-block">&#8226;</p>
+            <p class="open-dot-text open-block">Masih Buka</p>
+          </div>
+          <div id="welcome-down">
+            <p>Lihat Lebih</p>
+            <p class="welcome-arrow"><a href="#"></a></p>
+          </div>
+          <div id="welcome-time">
+            <div id="txt"></div>
+
+            <script>
+              function startTime() {
+                const today = new Date();
+                let h = today.getHours();
+                let m = today.getMinutes();
+                let s = today.getSeconds();
+                m = checkTime(m);
+                s = checkTime(s);
+                document.getElementById("txt").innerHTML = h + ":" + m + ":" + s;
+                setTimeout(startTime, 1000);
+              }
+
+              function checkTime(i) {
+                if (i < 10) {
+                  i = "0" + i;
+                } // add zero in front of numbers < 10
+                return i;
+              }
+            </script>
+          </div>
+        </div>
+      </div>
+
+      <!--About Section-->
+      <div id="about-section">
+        <h2 id="about-title">ABOUT US</h2>
+        <p id="about-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+    </main>
+  </body>
+  <footer></footer>
+</html>
